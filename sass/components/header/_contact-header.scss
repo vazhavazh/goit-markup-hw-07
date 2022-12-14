@@ -1,36 +1,10 @@
-.contact-header {
+.contact-header-list {
   display: flex;
   margin-left: auto;
   gap: 50px;
 }
 
-.mail-icon {
-  fill: var(--main-text-color);
-  transition: fill var(--hover-effect);
-
-  .contact-link:hover & {
-    fill: var(--accent-color);
-  }
-
-  .contact-link:focus & {
-    fill: var(--accent-color);
-  }
-}
-
-.tel-icon {
-  fill: var(--main-text-color);
-  transition: fill var(--hover-effect);
-
-  .contact-link:hover & {
-    fill: var(--accent-color);
-  }
-
-  .contact-link:focus & {
-    fill: var(--accent-color);
-  }
-}
-
-.contact-link {
+.contact-header__link {
   color: var(--main-text-color);
   text-decoration: none;
   font-weight: 500;
@@ -42,11 +16,35 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
-
   transition: color var(--hover-effect);
 
   &:hover,
   &:focus {
     color: var(--accent-color);
   }
+}
+
+.contact-header__link--mail-icon {
+  fill: var(--main-text-color);
+  transition: fill var(--hover-effect);
+  .contact-header__link:hover & {
+  fill: var(--accent-color);
+}
+.contact-header__link:focus & {
+  fill: var(--accent-color);
+}
+}
+
+
+.contact-header__link--tel-icon {
+  fill: var(--main-text-color);
+  transition: fill var(--hover-effect);
+
+  .contact-header__link:hover & {
+  fill: var(--accent-color);
+}
+.contact-header__link:focus & {
+  fill: var(--accent-color);
+}
+
 }

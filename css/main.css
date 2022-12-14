@@ -74,9 +74,6 @@ header {
 }
 
 .logo {
-  color: var(--accent-color);
-}
-.logo-link {
   text-decoration: none;
   font-family: "Raleway";
   font-weight: var(--font-weight-bold);
@@ -85,14 +82,18 @@ header {
   letter-spacing: 0.03em;
   margin-right: 93px;
 }
-.logo-back {
+.logo--forward {
+  color: var(--accent-color);
+}
+.logo--back {
   color: var(--secondary-text-color);
 }
 
-.site-nav {
+.site-nav-list {
   display: flex;
 }
-.site-nav .link {
+
+.site-nav__link {
   display: block;
   position: relative;
   color: var(--secondary-text-color);
@@ -105,13 +106,15 @@ header {
   padding-top: 32px;
   transition: color var(--hover-effect);
 }
-.site-nav .link:hover, .site-nav .link:focus {
+.site-nav__link:hover, .site-nav__link:focus {
   color: var(--accent-color);
 }
-.site-nav .link.current {
+
+.site-nav__link.current {
   color: var(--accent-color);
 }
-.site-nav .item:not(:last-child) {
+
+.site-nav__item:not(:last-child) {
   margin-right: 40px;
 }
 
@@ -125,35 +128,13 @@ header {
   background-color: var(--accent-color);
 }
 
-.contact-header {
+.contact-header-list {
   display: flex;
   margin-left: auto;
   gap: 50px;
 }
 
-.mail-icon {
-  fill: var(--main-text-color);
-  transition: fill var(--hover-effect);
-}
-.contact-link:hover .mail-icon {
-  fill: var(--accent-color);
-}
-.contact-link:focus .mail-icon {
-  fill: var(--accent-color);
-}
-
-.tel-icon {
-  fill: var(--main-text-color);
-  transition: fill var(--hover-effect);
-}
-.contact-link:hover .tel-icon {
-  fill: var(--accent-color);
-}
-.contact-link:focus .tel-icon {
-  fill: var(--accent-color);
-}
-
-.contact-link {
+.contact-header__link {
   color: var(--main-text-color);
   text-decoration: none;
   font-weight: 500;
@@ -167,21 +148,44 @@ header {
   justify-content: center;
   transition: color var(--hover-effect);
 }
-.contact-link:hover, .contact-link:focus {
+.contact-header__link:hover, .contact-header__link:focus {
   color: var(--accent-color);
 }
 
-.hero {
+.contact-header__link--mail-icon {
+  fill: var(--main-text-color);
+  transition: fill var(--hover-effect);
+}
+.contact-header__link:hover .contact-header__link--mail-icon {
+  fill: var(--accent-color);
+}
+.contact-header__link:focus .contact-header__link--mail-icon {
+  fill: var(--accent-color);
+}
+
+.contact-header__link--tel-icon {
+  fill: var(--main-text-color);
+  transition: fill var(--hover-effect);
+}
+.contact-header__link:hover .contact-header__link--tel-icon {
+  fill: var(--accent-color);
+}
+.contact-header__link:focus .contact-header__link--tel-icon {
+  fill: var(--accent-color);
+}
+
+.hero-section {
   text-align: center;
   display: flex;
 }
-.hero-container {
+
+.hero {
   padding-top: 200px;
   padding-bottom: 200px;
   min-width: 1600px;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../image/img-overlay.jpg);
 }
-.hero-title {
+.hero__title {
   color: var(--main-bgc);
   font-weight: 900;
   font-size: 44px;
@@ -193,7 +197,7 @@ header {
   margin-bottom: 30px;
 }
 
-.hero-button {
+.hero__button {
   display: inline-block;
   background: var(--accent-color);
   border-radius: 4px;
@@ -204,12 +208,13 @@ header {
   padding-left: 32px;
   transition: color var(--hover-effect);
 }
-.hero-button:hover, .hero-button:focus {
+.hero__button:hover, .hero__button:focus {
   color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(226, 198, 198, 0.15);
   cursor: pointer;
 }
-.hero-button-name {
+
+.hero__button--name {
   color: var(--main-bgc);
   font-family: "Roboto";
   font-weight: var(--font-weight-bold);
@@ -218,21 +223,35 @@ header {
   letter-spacing: 0.06em;
 }
 
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  margin: -1px;
+}
+
 .benefits-section {
   padding-bottom: 0px;
 }
 
-.benefits-container-list {
+.benefits__list {
   display: flex;
   gap: 30px;
 }
 
-.benefits-list-item {
+.benefits__item {
   display: flex;
   flex-direction: column;
 }
 
-.benefits-link {
+.benefits__link {
   width: 270px;
   height: 120px;
   background-color: var(--third-bgc);
@@ -242,7 +261,7 @@ header {
   justify-content: center;
 }
 
-.benefits-title {
+.benefits__sub-title {
   color: var(--secondary-text-color);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-main);
@@ -252,7 +271,7 @@ header {
   margin-bottom: 10px;
 }
 
-.benefits-description {
+.benefits__description {
   font-size: var(--font-size-main);
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -432,7 +451,7 @@ header {
   margin-bottom: 9px;
 }
 
-.footer-logo-link {
+.logo-footer {
   display: block;
   text-decoration: none;
   font-family: "Raleway";
@@ -443,8 +462,7 @@ header {
   font-style: normal;
   margin-bottom: 20px;
 }
-
-.logo-back-footer {
+.logo-footer--back {
   color: var(--main-bgc);
 }
 
