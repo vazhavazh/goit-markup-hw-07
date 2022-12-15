@@ -1,8 +1,8 @@
-.site-nav-list {
+.main-nav__list {
   display: flex;
 }
 
-.site-nav__link {
+.main-nav__link {
   display: block;
   position: relative;
   color: var(--secondary-text-color);
@@ -20,11 +20,11 @@
   }
 }
 
-.site-nav__link.current {
+.main-nav__link.current {
   color: var(--accent-color);
 }
 
-.site-nav__item:not(:last-child) {
+.main-nav__item:not(:last-child) {
   margin-right: 40px;
 }
 

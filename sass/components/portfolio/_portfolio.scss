@@ -29,8 +29,6 @@
   }
 }
 
-
-
 .container-overlay {
   position: relative;
   overflow: hidden;
@@ -74,8 +72,10 @@
   transform: translateY(100%);
   transition: transform var(--hover-effect);
 
-
   .project-link:hover & {
-  transform: translateY(0);
-}
+    transform: translateY(0);
+  }
+  .project-link:focus & {
+    transform: translateY(0);
+  }
 }
